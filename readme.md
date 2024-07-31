@@ -32,3 +32,7 @@
 - POST `/comments/<post_id>` - create a new comment for given post
 - PUT `/comments/<id>` - edit comment
 - DELETE `/comments/` - delete comment
+
+
+### To-Do
+- authentication not working properly
