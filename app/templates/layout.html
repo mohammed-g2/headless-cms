@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='') }}">
+  <title>{% block title%}{% endblock %}</title>
+  <!-- Third-party CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='') }}">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" {% endblock %}>
+</head>
+
+<body>
+  {% include 'fragments/_navbar.html' %}
+  
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}
+  <!-- Third-party Javascript -->
+  <script src="{{ url_for('static', filename='') }}"></script>
+  <!-- App Javascript -->
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  {% endblock %}
+</body>
+
+</html>
