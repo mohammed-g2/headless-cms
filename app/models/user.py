@@ -62,7 +62,7 @@ class User(db.Model):
         return token
     
     def generate_auth_token(self, expires_in: int=600) -> str:
-        self.generate_token(
+        return self.generate_token(
             payload={'id': self.id}, 
             expires_in=expires_in)
     

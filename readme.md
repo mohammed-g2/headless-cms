@@ -14,25 +14,22 @@
 - run the application `flask run`
 
 ### API Doc
+- POST `/token/` - get timed validation token
 #### users
 - GET `/user/` - get a list of all users, paginated, admin permission required
 - GET `/user/<id>` - get user by id
 - POST `/users/` - create a new user
-- PUT `/users/<id>` - edit user
-- DELETE `/users/<id>` - delete user
+- PUT `/users/<id>` - edit user, requires authorization or admin permission
+- DELETE `/users/<id>` - delete user, requires authorization or admin permission
 #### posts
 - GET `/posts/` - get a list of all posts, paginated
 - GET `/posts/<id>` ` get post by id
-- POST `/posts/` - create a new post
-- PUT `/posts/<id>` - edit post
-- DELETE `/posts/<id>` - delete post
+- POST `/posts/` - create a new post, requires authorization
+- PUT `/posts/<id>` - edit post, requires authorization or admin permission
+- DELETE `/posts/<id>` - delete post, requires authorization or admin permission
 #### comments
 - GET `/comments/` - get a list of all comments, paginated, moderator permission required
 - GET `/comments/<id>` - get comment by id
-- POST `/comments/<post_id>` - create a new comment for given post
-- PUT `/comments/<id>` - edit comment
-- DELETE `/comments/` - delete comment
-
-
-### To-Do
-- authentication not working properly
+- POST `/comments/<post_id>` - create a new comment for given post, requires authorization
+- PUT `/comments/<id>` - edit comment, requires authorization or admin permission
+- DELETE `/comments/` - delete comment, requires authorization or admin permission

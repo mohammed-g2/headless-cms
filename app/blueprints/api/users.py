@@ -22,9 +22,14 @@ def get_users():
         prev = url_for('api.get_users', page=page-1)
     if pagination.has_next:
         next = url_for('api.get_users', page=page+1)
+
+    if g.current_user.is_admin():
+        users = [user.admin_serialize() for user in users]
+    else:
+        users = [user.serialize() for user in users]
     
     return jsonify({
-        'users': [user.serialize() for user in users],
+        'users': users,
         'prev_url': prev,
         'next_url': next,
         'count': pagination.total,

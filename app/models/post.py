@@ -19,6 +19,7 @@ class Post(db.Model):
     def serialize(self) -> dict:
         json = {
             'url': url_for('api.get_post', id=self.id),
+            'title': self.title,
             'body': self.body,
             'created_at': self.created_at,
             'user_url': url_for('api.get_user', id=self.user_id),
