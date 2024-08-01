@@ -60,6 +60,7 @@ env.bak/
 venv.bak/
 
 # Other
+*.sqlite
 node_modules/
 guidlines/
 tmp/
